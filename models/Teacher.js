@@ -28,7 +28,7 @@ const MongooseSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    research: {
+    batch: {
         type: String,
         required: true,
     },

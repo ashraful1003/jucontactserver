@@ -29,7 +29,7 @@ const MongooseSchema = new mongoose.Schema({
         required: true,
     },
     batch: {
-        type: Number,
+        type: String,
         required: true,
     },
 }, { timestamps: true }).plugin(require('mongoose-autopopulate'))

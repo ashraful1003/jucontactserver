@@ -2,10 +2,27 @@ const mongoose = require('../utils/mongoose');
 const constants = require('../utils/constants')
 
 const MongooseSchema = new mongoose.Schema({
-    userid: {
+    email: {
         type: String,
         required: true,
-        unique: true,
+        unique: true
+    },
+    expertise: {
+        type: String,
+        required: true,
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+        unique: true
     },
     department: {
         type: String,
@@ -18,7 +35,7 @@ const MongooseSchema = new mongoose.Schema({
 }, { timestamps: true }).plugin(require('mongoose-autopopulate'))
 
 //
-const SchemaModel = module.exports = mongoose.model('chairman', MongooseSchema);
+const SchemaModel = module.exports = mongoose.model('administration', MongooseSchema);
 
 // C
 module.exports.createData = (data, callback) => {

@@ -29,14 +29,14 @@ function responder(res, err, data) {
 // })
 
 // C
-router.post('/', Auth.isAuthenticated, (req, res) => {
+router.post('/', (req, res) => {
     Model.createData(req.body, (err, data) => {
         responder(res, err, data)
     })
 })
 
 // Ra
-router.get('/', Auth.isAuthenticated, (req, res) => {
+router.get('/', (req, res) => {
     Model.getAllData({}, req.query['page'] ? req.query['page'] : 0, (err, data) => {
         responder(res, err, data)
     })

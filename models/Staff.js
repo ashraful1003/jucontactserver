@@ -7,7 +7,7 @@ const MongooseSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    designation: {
+    expertise: {
         type: String,
         required: true,
     },
@@ -25,6 +25,10 @@ const MongooseSchema = new mongoose.Schema({
         unique: true
     },
     department: {
+        type: String,
+        required: true,
+    },
+    batch: {
         type: String,
         required: true,
     },
