@@ -28,12 +28,6 @@ function responder(res, err, data) {
 //     })
 // })
 
-// C
-router.post('/', (req, res) => {
-    Model.createData(req.body, (err, data) => {
-        responder(res, err, data)
-    })
-})
 
 // Ra
 router.get('/', (req, res) => {
@@ -71,8 +65,15 @@ router.get('/byid/:id', (req, res) => {
     })
 })
 
+// C
+router.post('/', (req, res) => {
+    Model.createData(req.body, (err, data) => {
+        responder(res, err, data)
+    })
+})
+
 // U1
-router.put('/:id', Auth.isAuthenticated, (req, res) => {
+router.put('/:id', (req, res) => {
     delete req.body.email
 
     Model.updateOneData({ _id: req.params.id }, req.body, (err, data) => {
@@ -81,14 +82,14 @@ router.put('/:id', Auth.isAuthenticated, (req, res) => {
 })
 
 // D1
-router.delete('/:id', Auth.isAuthenticated, (req, res) => {
+router.delete('/:id', (req, res) => {
     Model.removeOneData({ _id: req.params['id'] }, (err, data) => {
         responder(res, err, data)
     })
 })
 
 // Da
-router.delete('/', Auth.isAuthenticated, (req, res) => {
+router.delete('/', (req, res) => {
     Model.removeAllData((err, data) => {
         responder(res, err, data)
     })

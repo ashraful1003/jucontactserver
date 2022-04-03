@@ -29,7 +29,7 @@ function responder(res, err, data) {
 // })
 
 // C
-router.post('/', Auth.isAuthenticated, (req, res) => {
+router.post('/',(req, res) => {
     Model.createData(req.body, (err, data) => {
         responder(res, err, data)
     })
@@ -81,7 +81,7 @@ router.delete('/:id', Auth.isAuthenticated, (req, res) => {
 })
 
 // Da
-router.delete('/', Auth.isAuthenticated, (req, res) => {
+router.delete('/', (req, res) => {
     Model.removeAllData((err, data) => {
         responder(res, err, data)
     })

@@ -10,6 +10,7 @@ router.use('/staffs', require('./staffs'));
 router.use('/admins', require('./admins'));
 router.use('/chairmans', require('./chairmans'));
 router.use('/departments', require('./departments'));
+router.use('/administrations', require('./administrations'));
 
 router.get('/', function (req, res) {
     res.render('index', {title: 'Boilerplate'});
